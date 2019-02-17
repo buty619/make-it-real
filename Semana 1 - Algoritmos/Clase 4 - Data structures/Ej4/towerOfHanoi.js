@@ -46,17 +46,33 @@ StackList.prototype.pop = function () {
     return valor;
 }
 
-arr = new StackList();
-arr.push('a');
-arr.push('b');
-arr.push('c');
-arr.push('d');
-arr.push('e');
-arr.push('f');
-console.log(arr);
-console.log(arr.pop());
-console.log(arr.pop());
-console.log(arr.pop());
-console.log(arr.pop());
+function towerOfHanoi(source, aux, dest, level) {
+    if (level == 1) {
+        dest.push(source.pop());
+        level ++    
+        console.log(source);
+        console.log(aux);
+        console.log(dest);
+        console.log("---------*");
+    }
+    console.log(source);
+    console.log(aux);
+    console.log(dest);
+    console.log("---------/");
+    towerOfHanoi(source, aux, dest, level - 1);
+    dest.push(source.pop());
+    towerOfHanoi(aux, dest, source, level - 1);
+}
 
+//source = [1,2,3];
+//aux = [];
+//dest = [];
 
+source = new StackList();
+aux = new StackList();
+dest = new StackList();
+source.push(3);
+source.push(2);
+source.push(1);
+towerOfHanoi(source, aux, dest, 3)
+//console.log();
