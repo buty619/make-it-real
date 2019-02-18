@@ -8,6 +8,7 @@ BinaryTree = function () {
     this.depth = 0;
 }
 BinaryTree.prototype.add = function (value) {
+    this.size++
     let newNode = new TreeNode(value, null, null);
     if (!this.root) {
         this.root = newNode;
@@ -15,7 +16,6 @@ BinaryTree.prototype.add = function (value) {
     else {
         this.addRecursive(newNode, this.root);
     }
-    console.log("valor a agregar " + this.depth);
 }
 BinaryTree.prototype.addRecursive = function (newNode, node) {
     //comprobar si el value es menor a root insertar a derecha o izquierda
@@ -25,7 +25,6 @@ BinaryTree.prototype.addRecursive = function (newNode, node) {
         }
         else {
             this.addRecursive(newNode, node.left);
-            this.depth++
         }
     }
     else if (newNode.value > node.value) {
@@ -34,7 +33,6 @@ BinaryTree.prototype.addRecursive = function (newNode, node) {
         }
         else {
             this.addRecursive(newNode, node.rigth);
-            this.depth++
         }
     }
 }
@@ -52,39 +50,65 @@ BinaryTree.prototype.traverseDFSRecursive = function (node, action) {
 }
 
 BinaryTree.prototype.traverseBFS = function (action) {
-
     this.traverseBFSRecursive(this.root, action);
-
 }
 
 BinaryTree.prototype.traverseBFSRecursive = function (node, action) {
-    action(node.value);
-    while(this.depth>0){
-        console.log("valor en el buscador " + this.depth);
+    var queve = new QueveList();
+    queve.push(node.value);
+    action(queve.size);
+    while(!queve.head){
+        console.log("jumm")
+        node=queve.get();
+        action(node.value);
         if(node.left){
-           node.left.value;
-            this.depth--
-            this.traverseBFSRecursive(node,action);
+            node=node.left;
+            queve.push(node);
+            action(queve.size);
         }
         if(node.rigth){
-            node.rigth.value
-            this.depth--
-            this.traverseBFSRecursive(node,action);
+            node=node.rigth;
+            queve.push(node);
+            action(queve.size);
         }
     }
-    /*n = this.root
-    action(n.value)
-    n2 = n.left.value
-    action(n2)
-    n2 = n.rigth.value
-    action(n2)
-    n3 = n.left.left.value
-    action(n3)
-    n3 = n.left.rigth.value
-    action(n3)
-    n3 = n.rigth.left.value
-    action(n3)
-    */
+}
+
+
+var QueveList =function()  {
+    this.head = null;
+    this.size = 0;
+}
+
+var Node = function (value, next = null) {
+   this.value = value;
+   this.next = next;
+}
+
+QueveList.prototype.push = function(value){
+    nodo = new Node(value);
+    if(!this.head){
+        nodo.next=this.head;
+        this.head = nodo;
+        return this.head;
+    }
+    else{
+    last = this.head;
+    while(last.next !== null){
+        last = last.next;
+    }
+    last.next = nodo;    
+    }
+    return this.head;
+}
+
+QueveList.prototype.get = function(){
+    if(!this.head){
+        return this.head;
+    }
+    valor = this.head.value
+    this.head = this.head.next;
+    return valor;
 }
 
 
