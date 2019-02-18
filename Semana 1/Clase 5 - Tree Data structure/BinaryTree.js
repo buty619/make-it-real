@@ -50,26 +50,21 @@ BinaryTree.prototype.traverseDFSRecursive = function (node, action) {
 }
 
 BinaryTree.prototype.traverseBFS = function (action) {
-    this.traverseBFSRecursive(this.root, action);
-}
-
-BinaryTree.prototype.traverseBFSRecursive = function (node, action) {
     var queve = new QueveList();
-    queve.push(node.value);
-    action(queve.size);
-    while(!queve.head){
-        console.log("jumm")
+    queve.push(this.root);
+    while(queve){
         node=queve.get();
-        action(node.value);
-        if(node.left){
-            node=node.left;
-            queve.push(node);
-            action(queve.size);
+        if(node){
+            action(node.value);
+            if(node.left){
+                queve.push(node.left);
+            }
+            if(node.rigth){
+                queve.push(node.rigth);            
+            }
         }
-        if(node.rigth){
-            node=node.rigth;
-            queve.push(node);
-            action(queve.size);
+        else{
+            return;
         }
     }
 }
@@ -120,6 +115,6 @@ tree.add(7);
 tree.add(1);
 tree.add(3);
 tree.add(5);
-//tree.traverseDFS(function (e) { console.log(e); });
+tree.traverseDFS(function (e) { console.log(e); });
 //console.log(tree.root)
 tree.traverseBFS(function (e) { console.log(e); });
