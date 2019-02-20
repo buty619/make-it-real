@@ -108,21 +108,21 @@ QueveList.prototype.get = function () {
     return valor;
 }
 
-BinaryTree.prototype.reverse = function () {
-    this.reverseCall(this.root);
-}
+// BinaryTree.prototype.reverse = function () {
+//     this.reverseCall(this.root);
+// }
 
-BinaryTree.prototype.reverseCall = function (node) {
-    while(node){
-        C1 = node.left;
-        C2 = node.rigth;
-        node.left=C2;
-        node.rigth=C1;
-        node=node.left;
-    }
-    console.log(node);
-    return node;    
-}
+// BinaryTree.prototype.reverseCall = function (node) {
+//     while(node){
+//         C1 = node.left;
+//         C2 = node.rigth;
+//         node.left=C2;
+//         node.rigth=C1;
+//         node=node.left;
+//     }
+//     console.log(node);
+//     return node;    
+// }
 
 
 // BinaryTree.prototype.reverseCall = function (node) {

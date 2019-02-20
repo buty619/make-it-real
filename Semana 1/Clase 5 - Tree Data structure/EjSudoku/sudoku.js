@@ -104,18 +104,25 @@ function sudoku(str) {
     sudokuSolver(0, 0, boar);
 
 }
+function copia(board){
+    aux=[]
+    for(let x = 0; x < board.length; x++) {
+        aux[x] = board[x].slice();
+    }
+    return aux;
+}
 function sudokuSolver(i, j, board) {
-    if (i > 9 && j > 9) {
+    if (i > 8 && j > 8) {
         return true;
     }
     if (celdaLlena(i, j, board)) {
         next = siguente(i, j);
-        return sudokuSolver(next[0], next[1], board);
+        return sudokuSolver(next[0], next[1], copia(board));
     }
     options = getOptions(i, j, board);
     for (let i = 0; i < options.length; i++) {
         next = siguente(i, j);
-        resultado = sudokuSolver(next[0], next[1], board);
+        resultado = sudokuSolver(next[0], next[1], copia(board));
         if (resultado == true) {
             return true;
         }
@@ -125,6 +132,7 @@ function sudokuSolver(i, j, board) {
     }
 }
 
+// mirar lo de copiar el array
 
 
 //console.log(siguente(4, 8));
