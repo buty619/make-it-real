@@ -68,6 +68,7 @@ function getOptions(x, y, boar) {
             }
         }
     }
+
     OptArr = [...new Set(OptArr)];
     for (let i = 0; i < OptArr.length; i++) {
         for (let j = 0; j < 9; j++) {
@@ -76,6 +77,7 @@ function getOptions(x, y, boar) {
             }
         }
     }
+
     return MatrizRef
 }
 function celdaLlena(x, y, boar) {
@@ -86,31 +88,34 @@ function celdaLlena(x, y, boar) {
         return false;
     }
 }
-function siguente(x, y) {
-    salida = [];
-    if (y < 8) {
-        y++;
-    }
-    else {
-        x++;
-        y = 0;
-    }
-    salida = [x, y]
-    return salida
-}
-function sudoku(str) {
-    boar=[];
-    boar = parse(str);
-    sudokuSolver(0, 0, boar);
 
+function siguente(x, y) {
+    if (x == 8 && y == 8) {
+      return [9, 9];
+    }
+
+    if (y == 8) {
+      y = 0;
+      x++;
+    } else {
+      y++;
+    }
+
+    return [x, y];
 }
-function copia(board){
-    aux=[]
-    for(let x = 0; x < board.length; x++) {
+
+function sudoku(str) {
+    let board = parse(str);
+    return sudokuSolver(0, 0, board);
+}
+function copia(board) {
+    let aux = []
+    for (let x = 0; x < board.length; x++) {
         aux[x] = board[x].slice();
     }
     return aux;
 }
+
 function sudokuSolver(i, j, board) {
     if (i > 8 && j > 8) {
         return true;
@@ -119,25 +124,25 @@ function sudokuSolver(i, j, board) {
         next = siguente(i, j);
         return sudokuSolver(next[0], next[1], copia(board));
     }
-    options = getOptions(i, j, board);
-    for (let i = 0; i < options.length; i++) {
+    const options = getOptions(i, j, board);
+    if (options.length == 0) {
+        return false
+    }
+    for (let k = 0; k < options.length; k++) {
         next = siguente(i, j);
-        resultado = sudokuSolver(next[0], next[1], copia(board));
+        let boardCopy = copia(board);
+        boardCopy[i][j] = options[k];
+
+        let resultado = sudokuSolver(next[0], next[1], boardCopy);
         if (resultado == true) {
             return true;
         }
-        else{
-            return false;
-        }
     }
+
+    return false;
 }
 
-// mirar lo de copiar el array
-
-
-//console.log(siguente(4, 8));
 var entrada = "...26.7.168..7..9.19...45..82.1...4...46.29...5...3.28..93...74.4..5..367.3.18...";
 console.log(sudoku(entrada));
-//console.log(parse(entrada))
-//console.log(getCuadrante(0,4));
-//console.log(getOptions(2,7,parse(entrada)));
+var board = "..9.287..8.6..4..5..3.....46.........2.71345.........23.....5..9..4..8.7..125.3.."
+console.log(sudoku(board)); // false
