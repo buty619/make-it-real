@@ -1,3 +1,5 @@
+//https://github.com/makeitrealcamp/top/blob/master/algorithms/5-data-structures-ii.md
+
 TreeNode = function (value, left, rigth) {
     this.value = value;
     this.left = left;
@@ -52,53 +54,53 @@ BinaryTree.prototype.traverseDFSRecursive = function (node, action) {
 BinaryTree.prototype.traverseBFS = function (action) {
     var queve = new QueveList();
     queve.push(this.root);
-    while(queve){
-        node=queve.get();
-        if(node){
+    while (queve) {
+        node = queve.get();
+        if (node) {
             action(node.value);
-            if(node.left){
+            if (node.left) {
                 queve.push(node.left);
             }
-            if(node.rigth){
-                queve.push(node.rigth);            
+            if (node.rigth) {
+                queve.push(node.rigth);
             }
         }
-        else{
+        else {
             return;
         }
     }
 }
 
 
-var QueveList =function()  {
+var QueveList = function () {
     this.head = null;
     this.size = 0;
 }
 
 var Node = function (value, next = null) {
-   this.value = value;
-   this.next = next;
+    this.value = value;
+    this.next = next;
 }
 
-QueveList.prototype.push = function(value){
+QueveList.prototype.push = function (value) {
     nodo = new Node(value);
-    if(!this.head){
-        nodo.next=this.head;
+    if (!this.head) {
+        nodo.next = this.head;
         this.head = nodo;
         return this.head;
     }
-    else{
-    last = this.head;
-    while(last.next !== null){
-        last = last.next;
-    }
-    last.next = nodo;    
+    else {
+        last = this.head;
+        while (last.next !== null) {
+            last = last.next;
+        }
+        last.next = nodo;
     }
     return this.head;
 }
 
-QueveList.prototype.get = function(){
-    if(!this.head){
+QueveList.prototype.get = function () {
+    if (!this.head) {
         return this.head;
     }
     valor = this.head.value
@@ -106,6 +108,41 @@ QueveList.prototype.get = function(){
     return valor;
 }
 
+BinaryTree.prototype.reverse = function () {
+    this.reverseCall(this.root);
+}
+
+BinaryTree.prototype.reverseCall = function (node) {
+    while(node){
+        C1 = node.left;
+        C2 = node.rigth;
+        node.left=C2;
+        node.rigth=C1;
+        node=node.left;
+    }
+    console.log(node);
+    return node;    
+}
+
+
+// BinaryTree.prototype.reverseCall = function (node) {
+//     if (node) {
+//         this.reverseCall(node.left);
+//         //node.left=node.rigth
+//         C1 = node.left;
+//         C2 = node.rigth;
+//         node.left=C2;
+//         node.rigth=C1;
+//         this.reverseCall(node.rigth);
+//         //node.rigth=node.left
+//         C1 = node.left;
+//         C2 = node.rigth;
+//         node.left=C2;
+//         node.rigth=C1;
+//     }
+//     //return node;
+//     console.log(node);
+// }
 
 
 let tree = new BinaryTree();
@@ -115,6 +152,8 @@ tree.add(7);
 tree.add(1);
 tree.add(3);
 tree.add(5);
-tree.traverseDFS(function (e) { console.log(e); });
+//console.log(tree);
+console.log(tree.reverse());
+//tree.traverseDFS(function (e) { console.log(e); });
 //console.log(tree.root)
-tree.traverseBFS(function (e) { console.log(e); });
+//tree.traverseBFS(function (e) { console.log(e); });
