@@ -18,17 +18,17 @@
 
 .circle-red{
   animation: semaforoRojo 10s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: step-end;
 }
 
 .circle-amarillo{
   animation: semaforoAmarillo 10s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: step-end;
 }
 
 .circle-verde{
   animation: semaforoVerde 10s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: step-end;
 }
 
 
