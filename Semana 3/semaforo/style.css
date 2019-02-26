@@ -1,0 +1,50 @@
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 100px;  
+  border-radius: 5px;
+  background-color: black;
+  
+}
+.circle{
+  
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.circle-red{
+  animation: semaforoRojo 10s infinite;
+  animation-timing-function: linear;
+}
+
+.circle-amarillo{
+  animation: semaforoAmarillo 10s infinite;
+  animation-timing-function: linear;
+}
+
+.circle-verde{
+  animation: semaforoVerde 10s infinite;
+  animation-timing-function: linear;
+}
+
+
+@keyframes semaforoRojo {
+  0%   {background-color:red;}
+  50%  {background-color:black;}
+  100% {background-color:black;}
+}
+@keyframes semaforoAmarillo {
+  0%   {background-color:black;}
+  30%  {background-color:yellow;}
+  50%  {background-color:black;}
+  100% {background-color:black;}
+}
+@keyframes semaforoVerde {
+  0%   {background-color:black;}
+  50%  {background-color:green;}
+  100% {background-color:black;}
+}

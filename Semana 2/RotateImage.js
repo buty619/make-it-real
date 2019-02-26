@@ -38,7 +38,7 @@
 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-// dada la metriz de entrada la idea separar cada fila de la matriz 
+// dada la matriz de entrada la idea separar cada fila de la matriz 
 // y trasponerla, haciendo push de la nueva columna  y luego eliminar 
 // las originales para de esta manera no usar una matriz adicional
 /*
@@ -65,11 +65,13 @@ function Rotate(matrix){
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
         matrix[i].push(matrix[(size-1)-j][i]);
+        console.log(matrix);
       }       
     }
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             matrix[i].shift();
+            console.log(matrix);
         }       
       }    
     console.log(matrix);
