@@ -1,0 +1,611 @@
+* { box-sizing: border-box; }
+
+html{
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-wrapper {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background.jpg') no-repeat center top;
+  background-size: cover;
+  color: white;
+}
+
+header {
+  position: fixed;
+  padding: 10px 0;
+  width: 100%;
+  background-color: rgba(48, 48, 48, 0.5);
+}
+
+header img {
+  width: 150px;
+}
+
+nav{
+  display:none;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;  
+  padding: 75px 0 50px;
+}
+
+#home h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+#home .divider {
+  width: 60px;
+  border-top: 5px solid #fed136;
+  margin: 0 auto;
+}
+
+#home p {
+  font-size: 1rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#home .social {
+  align-self:flex-end center;
+}
+
+#home .social a {
+  color: white;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: black;
+  font-size: 1.8rem;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  line-height: 55px;
+  margin-right: 10px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+#home .social a:hover {
+  background-color: #fed136;
+}
+
+#servicios {
+  display:flex;
+  flex-direction: column;
+}
+
+#servicios .box {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+#video {
+  background-color: black;
+  text-align: center;
+  padding: 30px 0;
+}
+
+#portafolio {
+  display: flex;
+  flex-direction: column;
+}
+
+#portafolio .box {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 1%;
+  background-color: white;
+}
+
+#portafolio .box img {
+  width: 100%;
+}
+
+#portafolio .box p {
+  color: #666;
+  padding: 10px;
+}
+
+#contacto {
+  background-color: #303030;
+  background-image: url('../images/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+#contacto h2 {
+  color: white;
+}
+
+#contacto input {
+  padding: 20px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#contacto textarea {
+  margin: 20px 0;
+  padding: 20px;
+  width: 400px;
+}
+
+#contacto button {
+  background-color: #fed136;
+  padding: 20px 40px;
+  border-color: #fed136;
+  border-radius: 3px;
+  color: white;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+footer {
+  padding: 90px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+section {
+  padding: 30px 0;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  align-self: flex-start;
+  align-self: center;
+}
+
+#nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+}
+
+.PortafolioBackground{
+  background-color: whitesmoke;
+}
+
+@media(min-width:540px){
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .home-wrapper {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background.jpg') no-repeat center top;
+    background-size: cover;
+    color: white;
+  }
+  
+  header {
+    position: fixed;
+    padding: 10px 0;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.5);
+  }
+  
+  header img {
+    width: 200px;
+  }
+
+  nav{
+    display:inline;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 5px;
+  }
+  
+  header nav a.active {
+    background: #fed136;
+    border-radius: 3px;
+  }
+  
+  #home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+    padding: 150px 0 100px;
+  }
+  
+  #home h1 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+  
+  #home .divider {
+    width: 80px;
+    border-top: 5px solid #fed136;
+    margin: 0 auto;
+  }
+  
+  #home p {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  #home .social {
+    align-self:flex-end center;
+  }
+  
+  #home .social a {
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+  
+  #home .social a:hover {
+    background-color: #fed136;
+  }
+  
+  #servicios {
+    display:flex;
+    flex-direction: column;
+  }
+  
+  #servicios .box {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  #video {
+    background-color: black;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  #portafolio {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #portafolio .box {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 1%;
+    background-color: white;
+  }
+  
+  #portafolio .box img {
+    width: 100%;
+  }
+  
+  #portafolio .box p {
+    color: #666;
+    padding: 10px;
+  }
+  
+  #contacto {
+    background-color: #303030;
+    background-image: url('../images/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+  
+  #contacto h2 {
+    color: white;
+  }
+  
+  #contacto input {
+    padding: 20px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #contacto textarea {
+    margin: 20px 0;
+    padding: 20px;
+    width: 400px;
+  }
+  
+  #contacto button {
+    background-color: #fed136;
+    padding: 20px 40px;
+    border-color: #fed136;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: bold;
+  }
+  
+  footer {
+    padding: 90px 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    align-self: flex-start;
+    align-self: center;
+  }
+  
+  #nav{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 740px;
+  }
+  
+  .PortafolioBackground{
+    background-color: whitesmoke;
+  }
+
+}
+@media(min-width:992px){
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .home-wrapper {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background.jpg') no-repeat center top;
+    background-size: cover;
+    color: white;
+  }
+  
+  header {
+    position: fixed;
+    padding: 10px 0;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.5);
+  }
+  
+  header img {
+    width: 200px;
+  }
+  
+  nav{
+    display:inline;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 10px 15px;
+  }
+  
+  header nav a.active {
+    background: #fed136;
+    border-radius: 3px;
+  }
+  
+  #home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;  
+    padding: 250px 0 100px;
+  }
+  
+  #home h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+  
+  #home .divider {
+    width: 100px;
+    border-top: 5px solid #fed136;
+    margin: 0 auto;
+  }
+  
+  #home p {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  #home .social {
+    align-self:flex-end center;
+  }
+  
+  #home .social a {
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 80px;
+    width: 80px;
+    line-height: 84px;
+    margin-right: 10px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+  
+  #home .social a:hover {
+    background-color: #fed136;
+  }
+  
+  #servicios {
+    display:flex;
+    flex-direction: column;
+  }
+  
+  #servicios .box {
+    display: inline-block;
+    text-align: center;
+    width: 33%;
+    padding: 10px;
+  }
+  
+  #video {
+    background-color: black;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  #portafolio {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #portafolio .box {
+    display: inline-block;
+    text-align: center;
+    width: 31%;
+    margin: 1%;
+    background-color: white;
+  }
+  
+  #portafolio .box img {
+    width: 100%;
+  }
+  
+  #portafolio .box p {
+    color: #666;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  #contacto {
+    background-color: #303030;
+    background-image: url('../images/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+  
+  #contacto h2 {
+    color: white;
+  }
+  
+  #contacto input {
+    padding: 20px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #contacto textarea {
+    margin: 20px 0;
+    padding: 20px;
+    width: 400px;
+  }
+  
+  #contacto button {
+    background-color: #fed136;
+    padding: 20px 40px;
+    border-color: #fed136;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: bold;
+  }
+  
+  footer {
+    padding: 90px 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    align-self: flex-start;
+    align-self: center;
+  }
+  
+  #nav{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 992px;
+  }
+  
+  .PortafolioBackground{
+    background-color: whitesmoke;
+  }
+
+}
+

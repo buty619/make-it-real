@@ -1,0 +1,30 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0%;
+}
+.container{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg,grey,black);
+}
+.item{
+    width: 600px;
+    height: 200px;    
+    border-radius: 15px;
+    background-color: whitesmoke;
+    box-shadow: 7px 7px 20px rgb(68, 90, 184); 
+    transform: skew(5deg,-5deg);
+}
+p{
+    position: absolute;
+    margin: 40px;
+    top: 15px;
+    text-shadow: 2px 2px 5px gray;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;    
+}
