@@ -32,12 +32,12 @@ i{
 }
 
 .item:nth-child(odd):hover{
-  animation: shakeR 1s;
-  animation-timing-function: ease-in-out;
+  transition: 1s ease-in-out;
+  transform: rotate(-20deg);
 }
 .item:nth-child(even):hover{
-  animation: shakeL 1s;
-  animation-timing-function: ease-in-out;
+  transition: 1s ease-in-out;
+  transform: rotate(20deg);
 }
 
 @keyframes shakeL{
