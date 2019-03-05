@@ -1,0 +1,34 @@
+#win {
+    font-size: 80px;
+    color: orange;
+}
+
+#start{
+    margin: 0 auto;
+}
+
+#modalCenterV{
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#myModal{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top:45%;
+    left: auto;
+    right: auto;
+    margin: auto;
+}
+
+.back{
+    background:rgba(0, 0, 0, 0.6);
+}
+
+.hide{
+    visibility: hidden;
+}
