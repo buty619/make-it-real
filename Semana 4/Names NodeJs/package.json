@@ -1,0 +1,14 @@
+{
+  "name": "namesjs",
+  "version": "0.1.0",
+  "description": "create N random names",
+  "main": "randomNames.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristian Buitrago",
+  "license": "MIT",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}

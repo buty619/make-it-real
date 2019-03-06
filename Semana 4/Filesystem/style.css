@@ -1,0 +1,23 @@
+body{
+    font-family: arial;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    list-style-type: none;
+}
+.hide{
+    display:none;
+}
+
+.fa-folder-open{
+    font-size: 30px;
+    color: yellowgreen;
+    margin: 5px;
+}
+.fa-file{
+    font-size: 30px;
+    color: grey;
+    margin: 5px;
+}
