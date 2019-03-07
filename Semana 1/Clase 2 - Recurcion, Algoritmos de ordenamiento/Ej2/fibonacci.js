@@ -9,5 +9,5 @@ function fibonacci(Input){
     }
     return fibonacci(Input-1)+fibonacci(Input-2);    
 }
-console.log(fibonacci(4));
+console.log(fibonacci(7));
 //1 1 2 3 5 8 13

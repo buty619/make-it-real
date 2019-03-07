@@ -1,17 +1,17 @@
 function gRandom() {
-  nRandom1 = Math.floor(Math.random() * 10);
-  nRandom2 = Math.floor(Math.random() * 10);
-  nRandom3 = Math.floor(Math.random() * 10);
-  nRandom4 = Math.floor(Math.random() * 10);
-  nRandom = '' + nRandom1 + nRandom2 + nRandom3 + nRandom4;
+  let nRandom1 = Math.floor(Math.random() * 10);
+  let nRandom2 = Math.floor(Math.random() * 10);
+  let nRandom3 = Math.floor(Math.random() * 10);
+  let nRandom4 = Math.floor(Math.random() * 10);
+  let nRandom = '' + nRandom1 + nRandom2 + nRandom3 + nRandom4;
   if (nRandom.match(/.*(.).*\1+.*/)) {
-    gRandom();
+    return gRandom();
   }
   return nRandom
 }
 
-NRandom = gRandom()
-console.log(NRandom);
+let nRandom = gRandom()
+console.log(nRandom);
 
 function picasFijas(input, random) {
   //se tiene un input de 4 numeros "xxxx"
@@ -35,6 +35,7 @@ function picasFijas(input, random) {
       }
     }
   }
+  picas = picas-fijas;
   return [picas, fijas];
 }
 
@@ -53,7 +54,7 @@ $("#input").keypress(function (e) {
       let input = $("#input").val();
       $("#input").removeClass("border border-danger text-danger");
       $("#help-block").text("");
-      resultado = picasFijas(input, NRandom);
+      resultado = picasFijas(input, nRandom);
       $("tbody").append("<tr> <td>" + input + "</td> <td>" + resultado[0] + "</td> <td>" + resultado[1] + "</td>");
       $("#input").val("");
       if (resultado[1] == 4) {
