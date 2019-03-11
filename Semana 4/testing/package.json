@@ -1,0 +1,15 @@
+{
+  "name": "testingjess",
+  "version": "0.1.0",
+  "description": "testing whit jess",
+  "main": "LinkedList.test.js",
+  "scripts": {
+    "test": "jest"
+
+  },
+  "author": "Cfristian Buitrago",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.3.1"
+  }
+}

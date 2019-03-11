@@ -1,0 +1,21 @@
+{
+  "name": "trellomerge",
+  "version": "0.1.0",
+  "description": "mergion 2 js and minification",
+  "main": "trelloMerge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristian Buitrago",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@node-minify/core": "^4.0.5",
+    "@node-minify/uglify-js": "^4.0.5"
+  }
+}
