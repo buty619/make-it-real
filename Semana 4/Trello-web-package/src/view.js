@@ -1,3 +1,6 @@
+import Storage from "./storage";
+module.exports = View();
+
 class View {
   constructor() {
     this.id = 0;
@@ -34,7 +37,6 @@ class View {
     let otro = this.storage.get();
     this.id = otro["arreglo"].length;
     let objCall = this.storage.get();
-    console.log(objCall)
     for (let i = 0; i < objCall["arreglo"].length; i++) {
       let column = objCall["arreglo"][i]["columna"];
       let card = objCall["arreglo"][i]["targeta"];

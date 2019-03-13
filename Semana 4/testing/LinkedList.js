@@ -122,14 +122,16 @@ LinkedList.prototype.middle = function () {
     return this.middle.value;
 }
 
-arr = new LinkedList();
-module.exports = arr;
 
+module.exports = LinkedList;
 
-arr.add('a');
-console.log(arr);
+//let arr = new LinkedList;
+
+// arr.add('a');
 // arr.add('b');
 // arr.add('c');
+// console.log(arr.reverse());
+// console.log(arr.valueAt(0));
 // arr.add('d');
 // arr.add('e');
 // arr.add('f');

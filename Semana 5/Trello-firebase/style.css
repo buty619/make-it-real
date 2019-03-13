@@ -1,0 +1,91 @@
+body{
+  background-color: rgb(47, 100, 168);
+  font-family: 'Montserrat', sans-serif;
+  margin: 30px;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+  align-items: start;    
+}
+.column{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 5px;
+  background-color: whitesmoke;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+#underBox{
+  align-self: flex-end;
+  width: 100%;
+}
+h1{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 25px;
+}
+#action{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 5px;
+}
+.fa-times{
+  color: rgb(47, 100, 168);
+  font-size: 20px;
+  align-self: center;
+}
+.add{
+  background-color: rgb(47, 100, 168);
+  border: 1px solid rgb(47, 100, 168);
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.add:active{
+  box-shadow: 2px 2px 5px #54544a;
+}
+.hide{
+  display: none;
+}
+.buttom{
+  font-size: 14px;
+  align-self: flex-end;
+  left: auto;
+  width: 100%;
+  margin: 0;
+  margin-top:10px; 
+  border-radius: 5px;
+}
+.buttom:hover{
+  background-color: rgb(223, 223, 223);
+}
+.card{
+  background-color: white;
+  border: 1px solid  grey;
+  border-radius: 5px;
+  width: 97%;
+  height: 50px;
+  margin-top: 10px;
+  text-align: center;
+}
+.newCard{
+  background-color: white;
+  border: 1px solid  grey;
+  border-radius: 5px;
+  width: 97%;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+.onColumn{
+  box-shadow: 0px 0px 35px 12px #5770ff;
+}

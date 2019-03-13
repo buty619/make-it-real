@@ -1,6 +1,7 @@
 class View {
   constructor() {
     this.id = 0;
+    this.idFirebase = "";
     this.storage = new Storage;    
     $(document).ready(this.load.bind(this))
     $(".buttom").on("click", this.buttomClick)
@@ -22,25 +23,20 @@ class View {
     $(e.currentTarget).parents("#underBox").addClass("hide");
   }
   addCard(e) {
-    this.id = this.id + 1;
     const text = $(e.currentTarget).parents(".column").find(".card").val();
+    this.idFirebase = this.storage.save($(e.currentTarget).parents(".column").attr("id"), text);
     $(e.currentTarget).parents(".column").find(".card").remove();
-    $(e.currentTarget).parents(".column").find(".buttom").before("<div id=\"newCard" + this.id + "\"draggable=\"true\" class=\"newCard draggable\">" + text + "</div>")
+    $(e.currentTarget).parents(".column").find(".buttom").before("<div id=" + this.idFirebase + " draggable=\"true\" class=\"newCard draggable\">" + text + "</div>")
     $(e.currentTarget).parents("#underBox").prev().removeClass("hide");
-    $(e.currentTarget).parents("#underBox").addClass("hide");
-    this.storage.save($(e.currentTarget).parents(".column").attr("id"), "newCard" + this.id, text);
+    $(e.currentTarget).parents("#underBox").addClass("hide");    
   }
   load(e) {
-    let otro = this.storage.get();
-    this.id = otro["arreglo"].length;
-    let objCall = this.storage.get();
-    console.log(objCall)
-    for (let i = 0; i < objCall["arreglo"].length; i++) {
-      let column = objCall["arreglo"][i]["columna"];
-      let card = objCall["arreglo"][i]["targeta"];
-      let text = objCall["arreglo"][i]["texto"];
-      $("#" + column).find(".buttom").before("<div id=" + card + " draggable=\"true\" class=\"newCard draggable\">" + text + "</div>")
-    }
+    const arr = {"arreglo":[]};
+    this.storage.get().then((data)=>{
+      data.forEach(element => {
+        $("#" + element.val().columna).find(".buttom").before("<div id=" + element.key + " draggable=\"true\" class=\"newCard draggable\">" + element.val().texto + "</div>")
+      });
+    });
   }
   onDrag(e) {
     e.originalEvent.dataTransfer.setData("text", e.currentTarget.id);

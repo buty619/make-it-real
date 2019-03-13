@@ -1,3 +1,5 @@
+module.exports = Storage();
+
 class Storage{
   constructor(){
   }
@@ -30,3 +32,5 @@ class Storage{
     localStorage.setItem('objSave', JSON.stringify(objSave));
   }
 }
+
+// realizar valdicacion del local storage y no en view

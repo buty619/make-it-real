@@ -5,11 +5,11 @@
   "main": "LinkedList.test.js",
   "scripts": {
     "test": "jest"
-
   },
   "author": "Cfristian Buitrago",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^24.3.1"
+    "jest": "^24.3.1",
+    "webpack-cli": "^3.2.3"
   }
 }

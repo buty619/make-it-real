@@ -9,6 +9,22 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">   
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAVKWRouxZCz7py-4yPzXIuKix_ohRwKPw",
+        authDomain: "trello-ee345.firebaseapp.com",
+        databaseURL: "https://trello-ee345.firebaseio.com",
+        projectId: "trello-ee345",
+        storageBucket: "trello-ee345.appspot.com",
+        messagingSenderId: "389658390254"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
   </head>
   <body>
     <div class="container">
@@ -44,9 +60,7 @@
       </div>      
     </div>            
   </body>
-  <!--<script src="main.02511a77257e9e2fe2a1.js"></script>-->  
+  <script src="storage.js"></script>
   <script src="view.js"></script>
-  <script src="storage.js"></script> 
-  <script src="main.js"></script>
-     
+  <script src="main.js"></script>    
 </html>
