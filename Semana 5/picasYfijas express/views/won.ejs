@@ -5,49 +5,24 @@
     <title>Picas y Fijas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container mt-5">
-      <h1 class="text-center">Picas y Fijas</h1>
-      <p class="text-center">Ingresa cuatro digitos diferentes y oprime Enter.</p>
-      <div  class="row align-items-center justify-content-center">
-        <div class="input-group mb-3 col-4 mt-4">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">#</span>
-            </div>
-            <input id="input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <p id="help-block" class="col-12 text-center text-danger"></p>
-      </div>
-      <div class="row align-items-center justify-content-center">
-          <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Número</th>
-                  <th scope="col">Picas</th>
-                  <th scope="col">Fijas</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-          </table>
-      </div>
-    </div>
-
     <div id ="myModal" class="hide">
       <div id="modalCenterV" class="row">        
         <div class="col-12 text-center">
           <h1 id="win"><b>! GANASTE ¡</b></h1>            
         </div>
-        <button id="start" type="button" class="btn btn-warning">Jugar de Nuevo</button>           
+        <form action="/reset" method="post">
+        <button id="reset" name="reset" type="submit" class="btn btn-warning">Jugar de Nuevo</button>
+        </form>           
       </div>         
     </div>
-
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>        
+  <script src="app.js"></script>
 </html>
