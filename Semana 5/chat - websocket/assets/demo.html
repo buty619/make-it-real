@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="emoji-picker.css">
+  <script src="emoji-picker.js"></script>
+  <style>
+    #message-input {
+      margin-top: 400px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="message-input" contenteditable="true">
+
+  </div>
+
+  <script>
+    EmojiPicker.imagePath = "static/sheet_apple_64_indexed_128.png";
+    EmojiPicker.init("#message-input");
+  </script>
+</body>
+</html>

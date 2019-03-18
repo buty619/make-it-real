@@ -1,0 +1,130 @@
+.emopickr-icon {
+  right: 20px;
+  top: 14px;
+  color: #999;
+  width: 20px;
+  height: 20px; 
+}
+  .emopickr-icon:hover {
+    cursor: pointer; }
+
+.emopickr-parent {
+  position: relative; }
+  .emopickr-parent .emopickr-input {
+    white-space: pre-wrap; }
+    .emopickr-parent .emopickr-input .emoji {
+      height: 21px;
+      width: 21px;
+      vertical-align: top; }
+
+.emopickr, .emopickr * {
+  box-sizing: border-box; }
+
+.emopickr {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  width: 330px;
+  max-width: 100%;
+  height: 357px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 50ms ease, bottom 1s ease-out;
+  z-index: 99999; }
+  .emopickr.open {
+    visibility: visible;
+    opacity: 1; }
+  .emopickr h3 {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    color: #555;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    margin: 0;
+    padding: 8px; }
+  .emopickr .emopickr-header {
+    padding: 4px 0 0 7px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background: #f7f7f7; }
+    .emopickr .emopickr-header .emopickr-tab {
+      display: inline-block;
+      width: 28px;
+      margin-right: 7px;
+      padding: 4px;
+      transition: border-color 150ms ease-out;
+      text-align: center;
+      color: #9e9ea6;
+      border-bottom: 3px solid transparent; }
+      .emopickr .emopickr-header .emopickr-tab.active {
+        padding-top: 3px;
+        color: #9e9ea6;
+        border-bottom: 3px solid #e7543d; }
+      .emopickr .emopickr-header .emopickr-tab .emoji {
+        width: 18px;
+        height: 18px; }
+    .emopickr .emopickr-header .emopickr-tab:hover {
+      cursor: pointer;
+      text-decoration: none; }
+  .emopickr #emopickr-search-input {
+    font-size: 0.9rem;
+    line-height: 20px;
+    width: 95%;
+    max-width: 100%;
+    height: 28px;
+    margin: .5rem 9px .6rem;
+    padding: 15px 1rem;
+    transition: border-color 150ms ease-out;
+    color: #444;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+    outline: none; }
+    .emopickr #emopickr-search-input:focus {
+      border-color: #a0a0a0; }
+  .emopickr .emopickr-search-results-title {
+    display: none;
+    margin-bottom: 6px; }
+  .emopickr .emopickr-sections {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-anchor: none;
+    height: 257px; }
+    .emopickr .emopickr-sections .emopickr-section .emopickr-section-list {
+      padding: 6px; }
+    .emopickr .emopickr-sections .emopickr-section.sticky h3 {
+      position: absolute;
+      top: 90px;
+      z-index: 4;
+      width: 327px; }
+    .emopickr .emopickr-sections .emopickr-section.sticky .emopickr-section-list {
+      padding-top: 30px; }
+    .emopickr .emopickr-sections .emoji-wrapper {
+      padding: 6px; }
+    .emopickr .emopickr-sections .emoji {
+      height: 24px;
+      width: 24px;
+      margin-right: 2.5px !important;
+      margin-bottom: 1px;
+      transition: background 500ms ease-out;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer; }
+
+.emoji-search-on .emopickr-search-results-title {
+  display: block; }
+.emoji-search-on .emopickr-sections {
+  height: 227px; }
+  .emoji-search-on .emopickr-sections .emopickr-section h3 {
+    display: none; }
+  .emoji-search-on .emopickr-sections .emopickr-section .emopickr-section-list {
+    padding: 0 6px; }
+  .emoji-search-on .emopickr-sections .emoji-wrapper {
+    display: none; }
+    .emoji-search-on .emopickr-sections .emoji-wrapper.emoji-match {
+      display: inline; }
+
+/*# sourceMappingURL=emoji-picker.css.map */

@@ -11,8 +11,29 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+  let usersConnected = Object.values(io.sockets.sockets).filter(s => s.nickName).map(s => s.nickName);
+  console.log(usersConnected)
+  
+  socket.on('logIn',function(nickName){
+    socket.nickName = nickName;
+    socket.broadcast.emit('logIn', socket.nickName);    
+  });
+
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    io.emit('chat message', {nickName:socket.nickName,msg:msg});
+  });
+
+  socket.on('disconnect', function(){
+    socket.broadcast.emit('logOut', socket.nickName);
+    socket.disconnect(true);
+  });
+
+  socket.on('typing', () => {
+    socket.broadcast.emit('typing', socket.nickName);
+  });
+
+  socket.on('stop typing', () => {
+    socket.broadcast.emit('stop typing', socket.nickName);
   });
 });
 
