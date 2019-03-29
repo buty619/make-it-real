@@ -5,7 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 //  ----------
-mongoose.connect('mongodb+srv://CristianB:cristian1991@cluster0-vjfaj.mongodb.net/NotesApp?retryWrites=true', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://CristianB:cristian1991@cluster0-vjfaj.mongodb.net/pollApp?retryWrites=true', { useNewUrlParser: true });
 mongoose.connection.on("error", function(e) { console.error(e); });
 app.use(express.urlencoded());
 app.use("/static", express.static(path.join(__dirname, "assets")));
@@ -23,7 +23,7 @@ const Notes = mongoose.model("Notes", notesSchema);
 app.get('/', function(req, res){
   Notes.find(function(err, notes) {
     if (err) return console.error(err);
-    console.log(notes);
+    console.log(notes[0]._id);
     res.render("index",{notes});    
   });
 });
@@ -33,8 +33,9 @@ app.post('/post', function(req,res){
     if(err){
       return console.log("ocurrio un error: ",err)
     }
-    console.log("documento generado");
+    console.log("documento generado");    
   });
+  res.redirect("/");
 });
 
 

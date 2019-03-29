@@ -15,7 +15,7 @@
       <input name="text" id="text" type="text">  
     </form>
     <% for(let i=0;i<notes.length;i++) { %>
-        <div> <h2><%= notes[i].title %></h2><p><%= notes[i].body %></p> </div> 
+        <div id= <%= notes[i]._id %>> <h2><%= notes[i].title %></h2><p><%= notes[i].body %></p> </div> 
     <% } %>                  
     <script>
       $("#text").keypress(function (e) {
